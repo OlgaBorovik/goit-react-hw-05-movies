@@ -4,7 +4,7 @@ import { Movies } from '../pages/Movies'
 import { MovieDetails } from './MovieDetails'
 import { Cast } from './Cast'
 import { Reviews } from './Reviews'
-import { NotFound } from './NotFound'
+// import { NotFound } from './NotFound'
 import {Layout} from './Layout'
 
 

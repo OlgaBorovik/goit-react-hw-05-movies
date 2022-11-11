@@ -1,7 +1,9 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { useParams } from "react-router-dom"
-import {fetchMovieById} from "../components/api"
+import { Outlet, useParams } from "react-router-dom"
+import { fetchMovieById } from "../components/api"
+import { Cast } from './Cast'
+import { Reviews } from "./Reviews"
 
 export const MovieDetails = () => {
     const {movieId} = useParams()
@@ -42,6 +44,9 @@ export const MovieDetails = () => {
 
             <h2>Genres</h2>
             {/* <p>{genres.map(genre => genre.name).join(', ')}</p> */}
+            <Cast />
+            <Reviews />
+            <Outlet />
         </div>
     )
 }
