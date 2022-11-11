@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { fetchSearchMovie } from "../components/api"
 import Searchbar from "../components/SearchBar"
-import {Link, Outlet} from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 export const Movies = () => {
     const [query, setQuery] = useState('')

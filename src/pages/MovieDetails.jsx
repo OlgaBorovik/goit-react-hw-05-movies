@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { Outlet, useParams } from "react-router-dom"
+import { Outlet, useParams, Link } from "react-router-dom"
 import { fetchMovieById } from "../components/api"
-import { Cast } from './Cast'
-import { Reviews } from "./Reviews"
+// import { Cast } from '../components/Cast'
+// import { Reviews } from "../components/Reviews"
 
 export const MovieDetails = () => {
     const {movieId} = useParams()
@@ -34,6 +34,8 @@ export const MovieDetails = () => {
     const userScore = Math.round(vote_average * 10)
     
     return (
+        <div>
+
         
         <div>
             <h1>{title} {name}</h1>
@@ -44,10 +46,16 @@ export const MovieDetails = () => {
 
             <h2>Genres</h2>
             {/* <p>{genres.map(genre => genre.name).join(', ')}</p> */}
-            <Cast />
+            
+            {/* <Cast />
             <Reviews />
+             */}
+            </div>
+            <p>Additional information</p>
+            <Link to={`cast`}>Cast</Link>
+            <Link to={`reviews`}>Reviews</Link>
             <Outlet />
-        </div>
+            </div>
     )
 }
 

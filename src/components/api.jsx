@@ -19,6 +19,16 @@ export const fetchMovieById = async (movieId) => {
   return response.data
 }
 
+export const fetchCredits = async (movieId) => {
+  const response = await axios.get(`movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`)
+  return response.data
+}
+
+export const fetchReviewsById = async (movieId) => {
+  const response = await axios.get(`movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`)
+  return response.data
+}
+
 /*
 https://api.themoviedb.org/3/search/keyword?api_key=44ea7036c70ee26ccb53a0fb67f71638&query=batman&page=1*/
 
