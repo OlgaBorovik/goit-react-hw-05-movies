@@ -12,9 +12,10 @@ export const MovieDetails = () => {
         const controller = new AbortController()
         async function fetchMovieDetails() {
             try {
-                const response = await fetchMovieById((movieId), { signal: controller.signal, })
+                const response = await fetchMovieById(movieId, { signal: controller.signal, })
+                console.log(response)
                 setMovie(response)
-                console.log(movie)
+                
             }
             catch (error) {
                 console.log(error.message)
@@ -23,10 +24,11 @@ export const MovieDetails = () => {
         fetchMovieDetails()
         return () => { controller.abort() }
         
-    }, [])
+    }, [movieId])
     
-    const { title, name, poster_path, overview, vote_average, genres, tagline } = movie
-    const genresList = genres.map(genre => genre.name).join(', ')
+    const { title, name, poster_path, overview, vote_average, tagline } = movie
+    // console.log(genres.map(genre => genre.name).join(', '))
+    // const genresList = genres.map(genre => genre.name).join(', ')
     const userScore = Math.round(vote_average * 10)
     
     return (
@@ -37,8 +39,9 @@ export const MovieDetails = () => {
             <p>User score: {userScore} %</p>
             <h2>Overview</h2>
             <p>{overview}</p>
+
             <h2>Genres</h2>
-            <p>{genresList}</p>
+            {/* <p>{genres.map(genre => genre.name).join(', ')}</p> */}
         </div>
     )
 }
