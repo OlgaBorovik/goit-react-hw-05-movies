@@ -10,9 +10,11 @@ export const fetchTrendingMovies = async () => {
 
 
 export const fetchSearchMovie = async (query) => {
-  const response = await axios.get(`search/keyword?api_key=${API_KEY}&query=${query}`)
+  const response = await axios.get(`search/movie?api_key=${API_KEY}&query=${query}`)
   return response.data
 }
+
+//https://api.themoviedb.org/3/search/movie?api_key=44ea7036c70ee26ccb53a0fb67f71638&language=en-US&query=
 
 export const fetchMovieById = async (movieId) => {
   const response = await axios.get(`movie/${movieId}?api_key=${API_KEY}&language=en-US`)

@@ -25,8 +25,6 @@ const Searchbar = ({onSubmit}) => {
             <div>
                 {/* <SearchbarHeader> */}
                     <form onSubmit={handleSubmit}>
-                        <button type="submit">Search</button>
-
                         <input
                         type="text"
                         autoComplete="off"

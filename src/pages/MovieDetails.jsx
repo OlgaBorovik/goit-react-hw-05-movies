@@ -1,13 +1,15 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { Outlet, useParams, Link } from "react-router-dom"
+import { Outlet, useParams, Link, useLocation } from "react-router-dom"
 import { fetchMovieById } from "../components/api"
 // import { Cast } from '../components/Cast'
 // import { Reviews } from "../components/Reviews"
 
 export const MovieDetails = () => {
     const {movieId} = useParams()
-    const [movie, setMovie] = useState({})    
+    const [movie, setMovie] = useState({})  
+    const location = useLocation()
+
 
     useEffect(() => {
         
@@ -33,9 +35,10 @@ export const MovieDetails = () => {
     // const genresList = genres.map(genre => genre.name).join(', ')
     const userScore = Math.round(vote_average * 10)
     
+    const backLinkHref = location.state?.from ?? '/home'
     return (
         <div>
-
+            <Link to={backLinkHref}>Go back</Link>
         
         <div>
             <h1>{title} {name}</h1>

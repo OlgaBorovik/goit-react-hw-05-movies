@@ -2,12 +2,13 @@ import { useEffect } from "react"
 import { useState } from "react"
 import axios from "axios"
 import { MoviesList } from '../components/MoviesList'
-import { Outlet} from "react-router-dom"
+import { Outlet } from "react-router-dom"
 // import {fetchTrendingMovies} from "../components/api"
 
 
 export const Home = () => {
     const [movies, setMovies] = useState([])
+    
 
     useEffect(() => {
         async function fetchMovies() {

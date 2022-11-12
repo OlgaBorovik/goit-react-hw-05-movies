@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react"
 import { fetchSearchMovie } from "../components/api"
 import Searchbar from "../components/SearchBar"
-import { Link, Outlet } from "react-router-dom"
+import { Outlet, } from "react-router-dom"
+import {MoviesList} from "../components/MoviesList"
 
 export const Movies = () => {
     const [query, setQuery] = useState('')
     const [movies, setMovies] = useState([])
-
+    
     const handleFormSubmit = query => {
     setMovies([])
     setQuery(query)
@@ -33,19 +34,16 @@ export const Movies = () => {
     return (
         <div>
         <Searchbar onSubmit={handleFormSubmit} />
-        <ul>
-            {
-                movies.map(({id, title, name}) =>
+        <MoviesList moviesList={movies} />
+            <Outlet/>
+        </div>
+    )
+}
+
+/*movies.map(({id, title, name}) =>
                     <li key={id}>
                         <Link to={`${id}`}>
                             {title}
                             {name}
                         </Link>
-                    </li>
-                )
-            }
-            </ul >
-            <Outlet/>
-        </div>
-    )
-}
+                    </li>*/

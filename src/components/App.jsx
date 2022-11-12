@@ -5,7 +5,7 @@ import { MovieDetails } from '../pages/MovieDetails'
 import { Cast } from './Cast'
 import { Reviews } from './Reviews'
 // import { NotFound } from './NotFound'
-import {Layout} from './Layout'
+
 
 
 
@@ -13,22 +13,20 @@ export const App = () => {
   return (
     <div>
       <nav>
-        <Link to="home">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/movies">Movies</Link>
         {/* <Link to="*">NotFound</Link> */}
       </nav>
-    <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="home" element={<Home />} />
-          <Route path="movies" element={<Movies />} />
-          <Route path="movies/:movieId" element={<MovieDetails />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:movieId" element={<MovieDetails />}>
                 <Route path="cast" element={<Cast />} />
                 <Route path="reviews" element={<Reviews />} />
                 {/* <Route path="*" element={<NotFound />} /> */}
-          </Route> 
+        </Route> 
           
-        </Route>
-          
+    
            
             
       </Routes>
