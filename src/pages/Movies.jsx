@@ -5,19 +5,15 @@ import { Outlet, useSearchParams } from "react-router-dom"
 import {MoviesList} from "../components/MoviesList"
 
 export const Movies = () => {
-    const [query, setQuery] = useState('')
     const [movies, setMovies] = useState([])
     const [searchParams, setSearchParams] = useSearchParams();
-    const searchQuery = searchParams.get('query') 
-    console.log(searchParams)
-    console.log(searchQuery)
+    const query = searchParams.get('query') ?? ""
+    
+    console.log(query)
     
     const handleFormSubmit = query => {
         setMovies([])
-        setQuery(searchQuery)
-        setSearchParams(query !== '' ? { query: query } : {})
-        console.log(query)
-        //value !== '' ? { filter: value } : {}
+        setSearchParams(query !== '' ? { query: query } : '')
     }
     
     useEffect(() => {
@@ -25,12 +21,15 @@ export const Movies = () => {
             return
         } 
         
-           const controller = new AbortController()
+        const controller = new AbortController()
         
             async function searchMovie() {
             try {
-                const response = await fetchSearchMovie((query),{signal: controller.signal,})
-                setMovies([...response.results])
+                const response = await fetchSearchMovie((query), { signal: controller.signal, })
+                if (response.data.results.length === 0) {
+                    alert('Sorry, film not found. Please, try again')
+                }
+                setMovies([...response.data.results])
             }
             catch (error) {
                 console.log(error.message)
@@ -38,16 +37,12 @@ export const Movies = () => {
         }
         searchMovie()
         return () => { controller.abort() }
-    
-        
-        }
-        
-        , [query])
+        }, [query])
 
     return (
         <div>
-        <Searchbar onSubmit={handleFormSubmit}  />
-        <MoviesList moviesList={movies} />
+            <Searchbar onSubmit={handleFormSubmit}  />
+            {movies && <MoviesList moviesList={movies} /> }
             <Outlet/>
         </div>
     )
