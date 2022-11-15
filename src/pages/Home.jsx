@@ -1,9 +1,8 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import axios from "axios"
 import { MoviesList } from '../components/MoviesList'
 import { Outlet } from "react-router-dom"
-// import {fetchTrendingMovies} from "../components/api"
+import {fetchTrendingMovies} from "../components/api"
 
 
 export const Home = () => {
@@ -13,7 +12,7 @@ export const Home = () => {
     useEffect(() => {
         async function fetchMovies() {
             try {
-                const response = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=44ea7036c70ee26ccb53a0fb67f71638`)
+                const response = await fetchTrendingMovies()
                 console.log(response.data.results)
                 setMovies([...response.data.results])
             }

@@ -29,10 +29,12 @@ const Searchbar = ({onSubmit}) => {
                         type="text"
                         autoComplete="off"
                         autoFocus
-                            placeholder="Search images and photos"
+                            placeholder="Search movie"
                             value={query}
                             onChange={onInputChange}
-                        />
+                        
+                    />
+                    <button type="submit">Search</button>
                     </form>
                 {/* </SearchbarHeader> */}
             </div>

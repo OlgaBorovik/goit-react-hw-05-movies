@@ -7,6 +7,9 @@ export const Cast = () => {
 
     const {movieId} = useParams()
     const [cast, setCast] = useState([])
+// const location = useLocation()
+
+
 
     useEffect(() => {
         

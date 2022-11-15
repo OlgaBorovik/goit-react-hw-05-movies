@@ -35,7 +35,7 @@ export const MovieDetails = () => {
     // const genresList = genres.map(genre => genre.name).join(', ')
     const userScore = Math.round(vote_average * 10)
     
-    const backLinkHref = location.state?.from ?? '/home'
+    const backLinkHref = location.state?.from ?? '/'
     return (
         <div>
             <Link to={backLinkHref}>Go back</Link>
