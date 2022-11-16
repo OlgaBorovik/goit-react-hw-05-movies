@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Outlet, useParams, useLocation } from "react-router-dom"
 import { fetchMovieById } from "../components/api"
 import { MovieCard } from '../components/MovieCard/MovieCard'
-import { Link } from "../components/MovieCard/MovieCard.styled"
+import { Link, Notification } from "../components/MovieCard/MovieCard.styled"
 
 export const MovieDetails = () => {
     const {movieId} = useParams()
@@ -38,7 +38,7 @@ export const MovieDetails = () => {
     return (
         <div>
             <Link to={backLinkHref}>Go back</Link>
-            {error && <div>Sorry, page not found</div>}
+            {error && <Notification>Sorry, the page not found</Notification>}
             {!error && movie && <MovieCard movie={movie} />}
             <Outlet />
             </div>

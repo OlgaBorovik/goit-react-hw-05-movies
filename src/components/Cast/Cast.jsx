@@ -43,11 +43,8 @@ export const Cast = () => {
                             {profile_path ? (
                                 <img src={`https://image.tmdb.org/t/p/w92/${profile_path}`} alt={name} />
                             ) : (
-                                    <ImImage size={92} fill={'grey'} /> 
+                                <ImImage size={130} fill={'grey'} /> 
                             )}
-                            {/* <img src={profile_path === null
-                                ? <ImImage size={92} />
-                                : `https://image.tmdb.org/t/p/w92/${profile_path}`} alt={name}></img> */}
                             <p>{name}</p>
                             <p>Character: {character}</p>
                     
@@ -57,11 +54,3 @@ export const Cast = () => {
     </CastContainer>)
 }
 
-/*{act.profile_path ? (
-                <img
-                  src={`https://image.tmdb.org/t/p/w92/${act.profile_path}`}
-                  alt={act.name}
-                />
-              ) : (
-                <MdOutlineNoPhotography size={50} />
-              )}*/

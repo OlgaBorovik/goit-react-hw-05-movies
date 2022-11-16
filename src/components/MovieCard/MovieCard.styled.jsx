@@ -25,3 +25,10 @@ margin-left: 20px;
     color: tomato;
 }
 `
+
+export const Notification = styled.div`
+
+font-size: 28px;
+margin-top: 24px;
+
+`
