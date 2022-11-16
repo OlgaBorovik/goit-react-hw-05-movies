@@ -6,4 +6,6 @@ padding: 16px;
 display: flex;
 flex-direction: column;
 justify-content: center;
+margin-left: auto;
+margin-right: auto;
 `

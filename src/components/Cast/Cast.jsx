@@ -29,8 +29,7 @@ export const Cast = () => {
         }
         fetchCast()
         return () => { controller.abort() }
-        // eslint-disable-next-line
-    }, [])
+    })
 
     
 

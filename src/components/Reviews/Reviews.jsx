@@ -17,7 +17,6 @@ useEffect(() => {
                 const response = await fetchReviewsById(movieId, { signal: controller.signal, })
                 console.log(response.results)
                 setReviews([...response.results])
-                console.log(reviews)
                 
             }
             catch (error) {
@@ -26,8 +25,8 @@ useEffect(() => {
         }
         fetchReviews()
         return () => { controller.abort() }
-        // eslint-disable-next-line
-    }, [])
+        
+    })
 
 
     return (

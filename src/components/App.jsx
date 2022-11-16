@@ -6,7 +6,7 @@ import { Cast } from './Cast/Cast'
 import { Reviews } from './Reviews/Reviews'
 import { Layout } from "./Layout/Layout"
 
-// import { NotFound } from './NotFound'
+import { NotFound } from './NotFound/NotFound'
 
 
 
@@ -23,7 +23,7 @@ export const App = () => {
                 
           </Route> 
         </Route>   
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
            
             
       </Routes>
