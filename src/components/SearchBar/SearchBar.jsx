@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Input, Button, Form, SearchBarContainer} from "./SearchBar.styled"
 
 
 const Searchbar = ({onSubmit}) => {
@@ -22,10 +23,10 @@ const Searchbar = ({onSubmit}) => {
     }
     
         return (
-            <div>
+            <SearchBarContainer>
                 {/* <SearchbarHeader> */}
-                    <form onSubmit={handleSubmit}>
-                        <input
+                    <Form onSubmit={handleSubmit}>
+                        <Input
                         type="text"
                         autoComplete="off"
                         autoFocus
@@ -34,10 +35,10 @@ const Searchbar = ({onSubmit}) => {
                             onChange={onInputChange}
                         
                     />
-                    <button type="submit">Search</button>
-                    </form>
+                    <Button type="submit">Search</Button>
+                    </Form>
                 {/* </SearchbarHeader> */}
-            </div>
+            </SearchBarContainer>
         )
     
 }

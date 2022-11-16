@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
-import { fetchCredits } from '../components/api'
+import { fetchCredits } from '../api'
 import { ImImage } from "react-icons/im";
+import {CastContainer, List, Item} from "./Cast.styled"
  
 
 export const Cast = () => {
@@ -34,20 +35,33 @@ export const Cast = () => {
     
 
     return (
-        <div>
-            <ul>
+        <CastContainer>
+            <List>
                 {
                     cast.map(({id, profile_path, name, character}) =>
-                        <li key={id}>
-                            <img src={profile_path === null
-                                ? <ImImage size={50} />
-                                : `https://image.tmdb.org/t/p/w45/${profile_path}`} alt={name}></img>
+                        <Item key={id}>
+                            {profile_path ? (
+                                <img src={`https://image.tmdb.org/t/p/w92/${profile_path}`} alt={name} />
+                            ) : (
+                                    <ImImage size={92} fill={'grey'} /> 
+                            )}
+                            {/* <img src={profile_path === null
+                                ? <ImImage size={92} />
+                                : `https://image.tmdb.org/t/p/w92/${profile_path}`} alt={name}></img> */}
                             <p>{name}</p>
                             <p>Character: {character}</p>
                     
-                </li>)
+                </Item>)
                 }
-            </ul>
-    </div>)
+            </List>
+    </CastContainer>)
 }
 
+/*{act.profile_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w92/${act.profile_path}`}
+                  alt={act.name}
+                />
+              ) : (
+                <MdOutlineNoPhotography size={50} />
+              )}*/

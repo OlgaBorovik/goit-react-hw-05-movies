@@ -20,10 +20,10 @@ export const Link = styled(NavLink)`
   font-size: 27px;
   font-weight: 500;
   text-decoration: none;
-  color: #2a363b;
+  color: #212121;
   &.active,
   &:hover,
   &:focus {
-    color: #2196f3;
+    color: tomato;
   }
 `;

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { fetchSearchMovie } from "../components/api"
-import Searchbar from "../components/SearchBar"
+import Searchbar from "../components/SearchBar/SearchBar"
 import { Outlet, useSearchParams } from "react-router-dom"
-import {MoviesList} from "../components/MoviesList"
+import { MoviesList } from "../components/MovieList/MoviesList"
+import { Container } from "../components/Container/Container"
 
 export const Movies = () => {
     const [movies, setMovies] = useState([])
@@ -40,11 +41,11 @@ export const Movies = () => {
         }, [query])
 
     return (
-        <div>
+        <Container>
             <Searchbar onSubmit={handleFormSubmit}  />
             {movies && <MoviesList moviesList={movies} /> }
             <Outlet/>
-        </div>
+        </Container>
     )
 }
 

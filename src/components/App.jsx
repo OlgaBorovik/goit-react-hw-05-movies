@@ -2,9 +2,10 @@ import { Routes, Route } from "react-router-dom"
 import { Home } from '../pages/Home'
 import { Movies } from '../pages/Movies'
 import { MovieDetails } from '../pages/MovieDetails'
-import { Cast } from './Cast'
-import { Reviews } from './Reviews'
+import { Cast } from './Cast/Cast'
+import { Reviews } from './Reviews/Reviews'
 import { Layout } from "./Layout/Layout"
+
 // import { NotFound } from './NotFound'
 
 
@@ -26,6 +27,7 @@ export const App = () => {
            
             
       </Routes>
+    
   );
 };
 

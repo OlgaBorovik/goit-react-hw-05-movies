@@ -1,8 +1,9 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { Outlet, useParams, Link, useLocation } from "react-router-dom"
+import { Outlet, useParams, useLocation } from "react-router-dom"
 import { fetchMovieById } from "../components/api"
-import { MovieCard} from '../components/MovieCard'
+import { MovieCard } from '../components/MovieCard/MovieCard'
+import { Link } from "../components/MovieCard/MovieCard.styled"
 
 export const MovieDetails = () => {
     const {movieId} = useParams()

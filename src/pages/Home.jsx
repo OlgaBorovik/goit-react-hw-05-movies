@@ -1,8 +1,10 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { MoviesList } from '../components/MoviesList'
+import { MoviesList } from '../components/MovieList/MoviesList'
 import { Outlet } from "react-router-dom"
-import {fetchTrendingMovies} from "../components/api"
+import { fetchTrendingMovies } from "../components/api"
+import { Container } from "../components/Container/Container"
+import{ Title} from "../components/MovieList/MovieList.styled"
 
 
 export const Home = () => {
@@ -26,10 +28,10 @@ export const Home = () => {
     
        
     return (
-        <div>
-        <h1>Trending today</h1>
+        <Container>
+        <Title>Trending today</Title>
             <MoviesList moviesList={movies} />
             <Outlet/>
-        </div>
+        </Container>
     )
 }
