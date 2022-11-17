@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
-import { fetchReviewsById} from '../api'
+import { fetchReviewsById } from '../api'
+import {NoReviews} from './Reviews.styled'
 
 
 
@@ -32,7 +33,7 @@ useEffect(() => {
     return (
         <div>
             {
-                reviews.length === 0 ? <div>No reviews</div> :
+                reviews.length === 0 ? <NoReviews>No reviews</NoReviews> :
             
             <ul>
                 {
