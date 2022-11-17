@@ -1,6 +1,7 @@
 import { Outlet} from "react-router-dom"
 import { Header, Link } from './Layout.styled'
 import {Container} from '../Container/Container'
+import { Suspense } from "react"
 
 export const Layout = () => {
     return (
@@ -12,7 +13,10 @@ export const Layout = () => {
                 {/* <Link to="*">NotFound</Link> */}
             </nav>   
             </Header>    
-         <Outlet />   
+            <Suspense fallback={null}>
+                <Outlet /> 
+        </Suspense>
+           
         </Container>
         
         

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { fetchReviewsById } from '../api'
-import {NoReviews} from './Reviews.styled'
+import { NoReviews } from './Reviews.styled'
+
 
 
 
@@ -27,7 +28,7 @@ useEffect(() => {
         fetchReviews()
         return () => { controller.abort() }
         
-    })
+    }, [movieId])
 
 
     return (

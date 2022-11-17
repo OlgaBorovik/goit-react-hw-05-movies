@@ -29,7 +29,7 @@ export const Cast = () => {
         }
         fetchCast()
         return () => { controller.abort() }
-    })
+    }, [movieId])
 
     
 

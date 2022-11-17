@@ -5,7 +5,7 @@ import { fetchMovieById } from "../components/api"
 import { MovieCard } from '../components/MovieCard/MovieCard'
 import { Link, Notification } from "../components/MovieCard/MovieCard.styled"
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
     const {movieId} = useParams()
     const [movie, setMovie] = useState({})  
     const [error, serError] = useState(null)
@@ -45,4 +45,4 @@ export const MovieDetails = () => {
     )
 }
 
-
+export default MovieDetails

@@ -5,7 +5,7 @@ import { Outlet, useSearchParams } from "react-router-dom"
 import { MoviesList } from "../components/MovieList/MoviesList"
 import { Container } from "../components/Container/Container"
 
-export const Movies = () => {
+const Movies = () => {
     const [movies, setMovies] = useState([])
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('query') ?? ""
@@ -49,3 +49,4 @@ export const Movies = () => {
     )
 }
 
+export default Movies

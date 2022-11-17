@@ -7,7 +7,7 @@ import { Container } from "../components/Container/Container"
 import{ Title} from "../components/MovieList/MovieList.styled"
 
 
-export const Home = () => {
+const Home = () => {
     const [movies, setMovies] = useState([])
     
 
@@ -35,3 +35,5 @@ export const Home = () => {
         </Container>
     )
 }
+
+export default Home
